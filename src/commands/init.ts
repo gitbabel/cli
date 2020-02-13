@@ -23,23 +23,9 @@ export default class Init extends Command {
     const configTemplate = `{
         "version": "1.0",
         "topics": {
-            "mapping": {
-                "adr": [],
-                "reference": [],
-                "guide": []
-            }
+            "mapping": {}
         },
-        "collections": [{
-            "title": "",
-            "description": "",
-            "sections": [{
-                "title": "",
-                "topics": [{
-                    "repository": "",
-                    "urlSlug": ""
-                }]
-            }]
-        }]
+        "collections": []
     }`
 
     const gitbabelDir = flags.target || '.gitbabel'
