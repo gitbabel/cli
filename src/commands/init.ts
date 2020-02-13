@@ -8,13 +8,13 @@ export default class Init extends Command {
   static examples = [
     `$ gitbabel init
 `,
-    `$ gitbabel init --folder 'foldername'
+    `$ gitbabel init --target 'foldername'
 `,
   ]
 
   static flags = {
-    // flag with a value (-f, --folder=VALUE)
-    folder: flags.string({char: 'f', description: 'folder to store config'}),
+    // flag with a value (-f, --target=VALUE)
+    target: flags.string({char: 't', description: 'folder to store config'}),
   }
 
   async run() {
@@ -42,7 +42,7 @@ export default class Init extends Command {
         }]
     }`
 
-    const gitbabelDir = flags.folder || '.gitbabel'
+    const gitbabelDir = flags.target || '.gitbabel'
     const configFilename = 'config.json'
     /*
     if directory and config file exists then prompt user on whether overwrite with config template

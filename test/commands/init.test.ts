@@ -31,7 +31,7 @@ describe('init', () => {
 
     test
     .stdout()
-    .command(['init', '--folder',  gitbabelDir])
+    .command(['init', '--target',  gitbabelDir])
     .it('runs init (directory does not exists) ', ctx => {
       expect(ctx.stdout).to.contain('saved')
     })
@@ -50,7 +50,7 @@ describe('init', () => {
 
     test
     .stdout()
-    .command(['init', '--folder',  gitbabelDir])
+    .command(['init', '--target',  gitbabelDir])
     .it('runs init (directory does not exists) ', ctx => {
       expect(ctx.stdout).to.contain('saved')
     })
@@ -70,7 +70,7 @@ describe('init', () => {
     // stub response for cli.confirm to true
     .stub(cli, 'confirm', () => async () => true)
     .stdout()
-    .command(['init', '--folder',  gitbabelDir])
+    .command(['init', '--target',  gitbabelDir])
     .it('runs init (Y) ', ctx => {
       expect(ctx.stdout).to.contain('saved')
     })
@@ -79,7 +79,7 @@ describe('init', () => {
     // stub response for cli.confirm to false
     .stub(cli, 'confirm', () => async () => false)
     .stdout()
-    .command(['init', '--folder',  gitbabelDir])
+    .command(['init', '--target',  gitbabelDir])
     .it('runs init (N) ', ctx => {
       expect(ctx.stdout).to.contain('has NOT been overwritten')
     })

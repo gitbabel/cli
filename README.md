@@ -38,6 +38,9 @@ creates a copy of gitBabel config in current director
 ```
 USAGE
   $ gitbabel init
+
+OPTIONS
+  --target  (optional) creates config in specified target folder
 ```
 
 _See code: [src/commands/init.ts](https://github.com/gitbabel/cli/blob/v0.0.0/src/commands/init.ts)_
